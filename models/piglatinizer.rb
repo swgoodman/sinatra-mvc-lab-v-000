@@ -20,10 +20,8 @@ class PigLatinizer
         @answer << word[3..-1] + word[0..1] + word[2] + 'ay'
       elsif consonants.include?(word[0].downcase) && consonants.include?(word[1])
         @answer << word[2..-1] + word[0..1] + 'ay'
-      elsif consonants.include?(word[0].downcase)
+      else consonants.include?(word[0].downcase)
         @answer << word[1..-1] + word[0] + 'ay'
-      else
-        @answer << word
       end
     end
     @answer.join(',').gsub(/[\s,]/ ," ")
